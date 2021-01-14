@@ -21,7 +21,8 @@
 ## JavaScript Code Examples
 
 <b>List Node Class</b>
-```class ListNode {
+```
+class ListNode {
     constructor(data) {
         this.data = data
         this.next = null                
@@ -30,7 +31,8 @@
 ```
 
 <b>Linked List Class</b>
-```class LinkedList {
+```
+class LinkedList {
     constructor(head = null) {
         this.head = head
     }
@@ -38,7 +40,8 @@
 ```
 
 <b>Create Linked List</b>
-```let node1 = new ListNode(2)
+```
+let node1 = new ListNode(2)
 let node2 = new ListNode(5)
 node1.next = node2
 let list = new LinkedList(node1)
@@ -50,7 +53,8 @@ console.log(list.head.next.data) //returns 5
 
 - <b>Size</b> - This method returns the number of nodes present in the linked list.
 
-```size() {
+```
+size() {
     let count = 0; 
     let node = this.head;
     while (node) {
@@ -63,14 +67,16 @@ console.log(list.head.next.data) //returns 5
 
 - <b>Clear</b> - This method empties out the list.
 
-```clear() {
+```
+clear() {
     this.head = null;
 }
 ```
 
 - <b>getLast</b> - This method returns the last node of the linked list.
 
-```getLast() {
+```
+getLast() {
     let lastNode = this.head;
     if (lastNode) {
         while (lastNode.next) {
@@ -83,7 +89,8 @@ console.log(list.head.next.data) //returns 5
 
 - <b>getFirst</b> - This method returns the first node of the linked list.
 
-```getFirst() {
+```
+getFirst() {
     return this.head;
 }
 ```
@@ -126,7 +133,8 @@ Implement the following functions that operate on your linked list class. Note t
 
 Analyze the following function (without running it in an IDE) to determine what problem it is trying to solve. What is the time complexity of this algorithm?
 
-```function WhatDoesThisProgramDo(lst) {
+```
+function WhatDoesThisProgramDo(lst) {
     let current = lst.head;
     while (current !== null) {
         let newNode = current;
