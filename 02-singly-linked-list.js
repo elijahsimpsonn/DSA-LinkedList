@@ -1,5 +1,5 @@
 // Write a function main. 
-// Within the function, using the linked list class from 01. 
+// Within the function, use the linked list class from 01. 
 // Create a linked list with the name SLL and add the following items to your linked list: Apollo, Boomer, Helo, Husker, Starbuck.
 // Add Tauhida to the list.
 // Remove squirrel from the list.
@@ -11,4 +11,23 @@
 // Using the insertAt() method insert Kat in the 3rd position of the list.
 // Remove Tauhida from the list.
 
+const LinkedList = require ('./01-linked-list-class')
 
+const main = () => {
+
+    let SSL = new LinkedList()
+    const addItems = ["Apollo", "Boomer", "Helo", "Husker", "Starbuck"]
+    addItems.forEach((item) => SSL.insertLast(item))
+    SSL.insertLast('Tauhida')
+    SSL.remove('squirrel')
+    SSL.insertBefore("Athena", "Boomer")
+    SSL.insertAfter("Hotdog", "Helo")
+    SSL.insertAt("Kat", 3)
+    SSL.remove('Tauhida')
+    
+    return SSL
+}
+
+main()
+
+module.exports = main
