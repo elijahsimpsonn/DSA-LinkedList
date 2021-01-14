@@ -102,4 +102,4 @@ console.log(ListFunctions.size(SSL));
 console.log(ListFunctions.isEmpty(SSL));
 console.log(ListFunctions.isEmpty(emptySSL));
 console.log(ListFunctions.findPrevious(SSL, "Boomer"));
-console.log(ListFunctions.findLast(SSL))
+console.log(ListFunctions.findLast(SSL));
