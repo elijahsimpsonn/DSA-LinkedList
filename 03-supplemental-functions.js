@@ -97,9 +97,9 @@ module.exports = ListFunctions;
 let SSL = main();
 let emptySSL = new LinkedList();
 
-console.log(ListFunctions.display(SSL));
-console.log(ListFunctions.size(SSL));
-console.log(ListFunctions.isEmpty(SSL));
-console.log(ListFunctions.isEmpty(emptySSL));
-console.log(ListFunctions.findPrevious(SSL, "Boomer"));
-console.log(ListFunctions.findLast(SSL));
+// console.log(ListFunctions.display(SSL));
+// console.log(ListFunctions.size(SSL));
+// console.log(ListFunctions.isEmpty(SSL));
+// console.log(ListFunctions.isEmpty(emptySSL));
+// console.log(ListFunctions.findPrevious(SSL, "Boomer"));
+// console.log(ListFunctions.findLast(SSL));
