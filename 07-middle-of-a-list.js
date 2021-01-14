@@ -6,6 +6,7 @@
 // So, don't use either of these approaches.
 
 const main = require('./02-singly-linked-list')
+const functions = require("./03-supplemental-functions")
 
 let SLL = main()
 
@@ -21,5 +22,6 @@ const middleOfList = (list) => {
     return sNode
 }
 
-console.log(middleOfList(SLL))
+console.log(functions.display(SLL))
+console.log(middleOfList(SLL).data) // Should be Kat
 
