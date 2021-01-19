@@ -14,9 +14,9 @@
 
 ## Types of Linked List
 
-<b>Singly Linked Lists</b> - Each node contains only one pointer to the next node. 
-<b>Double Linked Lists</b> - Each node contains two pointers, a pointer to the next node and a pointer to the previous node.
-<b>Circular Linked Lists</b> - Circular linked lists are a variation of a linked list in which the last node points to the first node or any other node before it, thereby forming a loop.
+- <b>Singly Linked Lists</b> - Each node contains only one pointer to the next node. 
+- <b>Double Linked Lists</b> - Each node contains two pointers, a pointer to the next node and a pointer to the previous node.
+- <b>Circular Linked Lists</b> - Circular linked lists are a variation of a linked list in which the last node points to the first node or any other node before it, thereby forming a loop.
 
 ## JavaScript Code Examples
 
@@ -65,6 +65,67 @@ size() {
 }
 ```
 
+- <b>Display</b> - This method displays all the nodes in the list.
+
+```
+const ListFunctions = {
+  display: (linkedList) => {
+    items = [];
+
+    if (linkedList.head === null) {
+      return "The list is empty";
+    } else {
+
+      let currNode = linkedList.head;
+
+      while (currNode.next !== null) {
+        items.push(currNode.data);
+        currNode = currNode.next;
+      }
+
+      items.push(currNode.data);
+    }
+
+    return `Linked List Items: ${items.join("->")}`;
+  }
+```
+
+- <b>isEmpty</b> - This method checks to see if the list is empty without using the size() method.
+
+```
+  isEmpty: (linkedList) => {
+    if (linkedList.head === null) {
+      return `This list is empty`;
+    }
+    return `There are items in this list`;
+  }
+```
+
+
+
+- <b>Find</b> - This method finds a node in the list.
+
+```
+  find(item) {
+    let currNode = this.head;
+
+    if (!this.head) {
+      return null;
+    }
+
+    while (currNode.data !== item) {
+      if (currNode.next === null) {
+        return null;
+      } else {
+        currNode = currNode.next;
+      }
+    }
+    return currNode;
+  }
+}
+```
+
+
 - <b>Clear</b> - This method empties out the list.
 
 ```
@@ -72,6 +133,121 @@ clear() {
     this.head = null;
 }
 ```
+
+- <b>Remove</b> - This method removes a node from the list.
+
+```
+  remove(item) {
+    if (!this.head) {
+      return null;
+    }
+
+    if (this.head.data === item) {
+      this.head = this.head.next;
+      return;
+    }
+
+    let currNode = this.head;
+    let previousNode = this.head;
+
+    while (currNode !== null && currNode.data !== item) {
+      previousNode = currNode;
+      currNode = currNode.next;
+    }
+
+    if (currNode === null) {
+      return;
+    }
+    previousNode.next = currNode.next;
+  }
+```
+
+
+- <b>insertFirst</b> - This method inserts a node into the first position of the linked list.
+
+```
+insertFirst(item) {
+    this.head = new _Node(item, this.head);
+  }
+```
+
+- <b>insertLast</b> - This method inserts a node into the last position of the linked list.
+
+```
+  insertLast(item) {
+    if (this.head === null) {
+      this.insertFirst(item);
+    } else {
+      let tempNode = this.head;
+      while (tempNode.next !== null) {
+        tempNode = tempNode.next;
+      }
+      tempNode.next = new _Node(item, null);
+    }
+  }
+```
+
+- <b>insertBefore</b> - This method inserts a node before a targeted node in the linked list.
+
+```  
+insertBefore(item, key) {
+    if (!this.head) {
+      return;
+    }
+
+    if (this.head.data === key) {
+      this.insertFirst(item);
+      return;
+    }
+
+    let currNode = this.head;
+    let previousNode = this.head;
+
+    while (currNode !== null && currNode.data !== key) {
+      previousNode = currNode;
+      currNode = currNode.next;
+    }
+
+    if (currNode === null) {
+      console.log(`key value not found`);
+      return;
+    }
+
+    previousNode.next = new _Node(item, currNode);
+  }
+```
+
+- <b>insertAfter</b> - This method inserts a node after a targeted node in the linked list.
+
+```
+  insertAfter(item, key) {
+
+    if (!this.head) {
+      return;
+    }
+
+    if (this.head.data === key) {
+      this.insertFirst(item);
+      return;
+    }
+
+    let currNode = this.head;
+    let nextNode = this.head;
+
+    while (currNode !== null && currNode.data !== key) {
+      currNode = nextNode;
+      nextNode = nextNode.next;
+    }
+
+    if (currNode === null) {
+      console.log(`key value not found`);
+      return;
+    }
+
+    currNode.next = new _Node(item, nextNode);
+  }
+```
+
 
 - <b>getLast</b> - This method returns the last node of the linked list.
 
@@ -94,6 +270,27 @@ getFirst() {
     return this.head;
 }
 ```
+
+- <b>findPrevious</b> - This method returns the previous node before the item you are looking for in the linked list.
+
+```
+  findPrevious: (linkedList, key) => {
+
+    if (linkedList.head === null) {
+      return null;
+    }
+    let prevNode;
+    let currNode = linkedList.head;
+
+    while (currNode.data !== key) {
+      prevNode = currNode;
+      currNode = currNode.next;
+    }
+
+    return `The previous node is ${prevNode.data}`;
+  }
+```
+
 
 ## Drills Overview
 
